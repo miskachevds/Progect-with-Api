@@ -25,3 +25,8 @@ a.active{
 .orange{
   color: orange;
 }
+
+.content{
+  width: 500px;
+  margin: 0 auto;
+}
