@@ -1,10 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import { useState,useEffect } from "react";
 
 function AboutInfo(){
     let {id} = useParams();
+    let navigate = useNavigate();
 
     let [post, setPost] = useState([null]);
+
+    let goBack = () => navigate(-1);
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)//один раз загр данные с API jsonplaceholder
@@ -19,6 +22,7 @@ function AboutInfo(){
                     <>
                         <h1>{post.title}</h1>
                         <p>{post.body}</p>
+                        <button onClick={goBack}>Назад</button>
                     </>
                 )
             }
