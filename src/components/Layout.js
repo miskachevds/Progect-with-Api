@@ -16,3 +16,5 @@ function Layout() {
 }
 
 export default Layout;
+
+//outlet показывает куда загружаются данные
